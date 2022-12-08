@@ -2,6 +2,9 @@ import { GatsbyNode } from "gatsby";
 import { resolve } from "path";
 import fetch from "isomorphic-fetch";
 
+export const onPostBuild: GatsbyNode["onPostBuild"] = ({ reporter }) => {
+  reporter.info("onPostBuild: gatsby build completed");
+};
 export const createPages: GatsbyNode["createPages"] = async ({
   actions: { createPage },
 }) => {
